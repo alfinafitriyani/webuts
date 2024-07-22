@@ -45,7 +45,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended('/admincoba');
         }
 
         return back()->withErrors([
@@ -66,24 +66,24 @@ class AuthController extends Controller
 
     public function admincoba()
     {
-        return view('admin');
+        return view('admin.admin');
     }
 
     public function redirects()
     {
         if (Auth::check()) {
             $usertype = Auth::user()->usertype;
-    
+
             if ($usertype == 'admin') {
                 return redirect()->route('admin');
             } else {
                 return redirect()->route('homepage');
             }
         }
-    
+
         return redirect('/login'); // Redirect to login if not authenticated
     }
-    
+
     public function admin()
     {
         return view('admin.admin');

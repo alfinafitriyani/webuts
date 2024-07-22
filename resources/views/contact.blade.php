@@ -8,7 +8,8 @@
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="text-center mx-auto" style="max-width: 700px; mb-5">
-                            <h1 class="text-primary">Hubungi Kami</h1>
+                            <h1 class="text-primary">Hubungi Kami Untuk</h1>
+                            <h3 class="text-black">Pembelian Grosir</h3>
                             {{-- <p class="mb-4">The contact form is currently inactive. Get a functional and working contact
                                 form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and
                                 you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
@@ -25,15 +26,19 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <form id="contactForm" action="" class="">
-                                        <input type="text" id="name" class="w-100 form-control border-0 py-3 mb-4" placeholder="Nama">
-                                        <input type="email" id="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Email">
+                                        <input type="text" id="name" class="w-100 form-control border-0 py-3 mb-4"
+                                            placeholder="Nama">
+                                        <input type="email" id="email" class="w-100 form-control border-0 py-3 mb-4"
+                                            placeholder="Email">
                                         <textarea id="message" class="w-100 form-control border-0 mb-4" rows="5" placeholder="Pesan"></textarea>
-                                        <button type="button" class="w-100 btn form-control border-secondary py-3 bg-warning text-light text-center" onclick="sendToWhatsApp()">
+                                        <button type="button"
+                                            class="w-100 btn form-control border-secondary py-3 bg-warning text-light text-center"
+                                            onclick="sendToWhatsApp()">
                                             Kirim
                                         </button>
                                     </form>
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -81,24 +86,22 @@
             var name = document.getElementById('name').value.trim();
             var email = document.getElementById('email').value.trim();
             var message = document.getElementById('message').value.trim();
-    
+
             // Validasi untuk memastikan bahwa semua field telah diisi
             if (!name || !email || !message) {
                 alert('Harap lengkapi semua field.');
                 return;
             }
-    
+
             // Buat pesan untuk dikirim ke WhatsApp
             var whatsappMessage = 'Nama: ' + name + '%0A' +
-                                   'Email: ' + email + '%0A' +
-                                   'Pesan: ' + message;
-    
+                'Email: ' + email + '%0A' +
+                'Pesan: ' + message;
+
             // URL WhatsApp
             var whatsappUrl = 'https://wa.me/62895363649388?text=' + encodeURIComponent(whatsappMessage);
-    
+
             // Arahkan ke URL WhatsApp
             window.location.href = whatsappUrl;
         }
     </script>
-    
-    

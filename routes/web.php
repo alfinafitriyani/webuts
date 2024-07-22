@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
 use App\Models\user;
@@ -55,6 +56,14 @@ Route::controller(StoreController::class)->group(function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
 });
+
+// produk
+Route::get('/admin/produk', [AdminController::class, 'produkIndex'])->name('admin.produk.index');
+Route::get('/admin/produk/create', [AdminController::class, 'produkCreate'])->name('admin.produk.create');
+Route::post('/admin/produk', [AdminController::class, 'produkStore'])->name('admin.produk.store');
+Route::get('/admin/produk/edit/{id}', [AdminController::class, 'produkEdit'])->name('edit.produk');
+Route::put('/admin/produk/produk/{id}', [AdminController::class, 'produkUpdate'])->name('admin.produk.update');
+Route::delete('/admin/produk/produk/{id}', [AdminController::class, 'produkDestroy'])->name('delete.produk');
 
 // Other route definitions...
 

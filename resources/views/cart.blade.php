@@ -213,7 +213,7 @@
             var encodedPesan = encodeURIComponent(pesan);
 
             // Membuat URL
-            var nomorTelepon = ""; // Ganti dengan nomor telepon tujuan
+            var nomorTelepon = "62895363649388"; // Ganti dengan nomor telepon tujuan
             var url = `https://api.whatsapp.com/send?phone=${nomorTelepon}&text=${encodedPesan}`;
             console.log(url);
 
@@ -223,5 +223,3 @@
         loadCart();
     </script>
 @endsection
-
-https://api.whatsapp.com/send?phone=&text=Daftar%20Pesanan%20%3A%0A-----------------%0ABeras%20%7C%201%20%7C%2010.000%20%7C%2010.000%0A-----------------%0ATotal%20%3D%2010.000
